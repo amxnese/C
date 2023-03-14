@@ -674,7 +674,6 @@ printf("%d",var);
 */
 
 // write your code here
-
 return 0;
 }
 
