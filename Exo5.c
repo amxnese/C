@@ -5,14 +5,15 @@ void print(float Tab[],int size);
 int max_value(float Tab[],int size);
 int max_value_from(float Tab[],int start,int end);
 void exchange(float Tab[],int index1,int index2);
+void sort(float Tab[],int size);
 int M;
 float val1,val2;
 int main(void){
     M = 35;
     do{
-        printf("enter the value of M  M>=35:  ");
+        printf("enter the value of M  M<=35:  ");
         scanf("%d",&M);
-    }while(M<35);
+    }while(M>35);
     float Tab[M];
     do{
         printf("enter the value of val1 and val2 respectively (val1<val2):  ");
@@ -25,8 +26,10 @@ int main(void){
     int max1 = max_value_from(Tab,1,4);
     printf("the maximum value index from the range(%d,%d) is :  %d\n",1,4,max1);
     exchange(Tab,2,4);
-    printf("after exchanging values:  \n");
+    printf("after exchanging values:   \n");
     print(Tab,M);
+    printf("array after sorting:   \n");
+    sort(Tab,M);
     return 0;
 }
 void lire(float Tab[],int size,float val1,float val2){
@@ -63,9 +66,17 @@ int max_value_from(float Tab[],int start,int end){
 }
 void exchange(float Tab[],int index1,int index2){
     float temp;
-    index1--;
+    index1--;   
     index2--;
     temp = Tab[index1];
     Tab[index1] = Tab[index2];
     Tab[index2] = temp;
+}
+void sort(float Tab[],int size){
+    int i = size;
+    for(i;i>1;i--){
+        int index = max_value_from(Tab,0,i);
+        exchange(Tab,index,i);
+    }
+    print(Tab,size);
 }
