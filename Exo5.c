@@ -12,7 +12,7 @@ int main(void){
     do{
         printf("enter the value of M  M>=35:  ");
         scanf("%d",&M);
-    }while(M<3);
+    }while(M<35);
     float Tab[M];
     do{
         printf("enter the value of val1 and val2 respectively (val1<val2):  ");
