@@ -7,11 +7,11 @@ int fact(int x){
     }
     return num;
 }
-float moyenne(float x,float z){
+float median(float x,float z){
     float result = (x+z)/2;
     return result;
 }
-void inverse(int T[],int taille){
+void reverse(int T[],int taille){
     for(int i=0;i<(taille/2);i++){
         int temp = T[i];
         T[i] = T[taille-1];
@@ -32,33 +32,36 @@ bool existance(int T[],int num,int taille){
     return false;
     }
 }
-int max_line(float **Tab,int line,int collumn){
-    int max_index = 0;
+int max_row(int row,int column,float Tab[row][column]){
+    int max_index = 1;
     float max = 0;
     float cur = 0;
-    for(int i=0;i<line;i++){
-        for(int n=0;n<collumn;n++){
-            cur += Tab[i][n];
+    for(int i=0;i<row;i++){
+        for(int j=0;j<column;j++){
+            cur += Tab[i][j];
         }
         if(cur > max){
             max = cur;
-            max_index = i;
+            max_index = i+1;
         }
     }
     return max_index;
 }
 int main(void){
+    //factoriel function
     int num;
     printf("enter the number:  ");
     scanf("%d",&num);
     printf("le factoriel de le nombre donnes est: %d \n",fact(num));
 
+    //median fucion
     printf("entrer les deux nombres pour obtenir le moyenne:  ");
     float a,b;
     scanf("%f",&a);
     scanf("%f",&b);
-    printf("le moyenne de les deux nombres donnes est:  %f\n",moyenne(a,b));
+    printf("le moyenne de les deux nombres donnes est:  %f\n",median(a,b));
 
+    //reverse function
     printf("entrer la taille de le tableau:  ");
     int taille;
     scanf("%d",&taille);
@@ -67,17 +70,28 @@ int main(void){
     for(int i=0;i<taille;i++){
         scanf("%d",&Tab[i]);
     }
-    inverse(Tab,taille);
+    reverse(Tab,taille);
     for(int i=0;i<taille;i++){
         printf("Tab[%d] ==> %d\n",i,Tab[i]);
     }
 
-    int tab[5];
+    //existance fuction
+    int Tab1[5];
     int num1,taille1;
     printf("entrer le nombre pour afficher l'existence:  ");
     scanf("%d",&num1);
     printf("entrer la taille de le tableau:  ");
     scanf("%d",&taille1);
-    existance(tab,num1,taille1);
+    existance(Tab1,num1,taille1);
 
+    //max_row fucntion
+    int row = 3;
+    int column = 4;
+    float Tab2[row][column];
+    for(int i=0;i<3;i++){
+        for(int j=0;j<column;j++){
+            Tab2[i][j] = i * j;
+        }
+    }
+    printf("the index of the row with max sum is :  %d",max_row(row,column,Tab2));
 }
