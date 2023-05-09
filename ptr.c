@@ -17,5 +17,6 @@ int main(void){
         printf("%d\n",*(ptr+i));
     }
     free(ptr);
+    ptr = NULL;
     return 0;
 }
