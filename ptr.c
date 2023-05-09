@@ -14,6 +14,6 @@ int main(void){
         scanf("%d",ptr+i);
     }
     for(int i=0;i<n;i++){
-        printf("%d\n",(*ptr)+i);
+        printf("%d\n",*(ptr+i));
     }
 }
