@@ -1,4 +1,4 @@
-//a Programme That Returns The Distance Between Two 2D Points
+//a Program That Returns The Distance Between Two 2D Points
 #include <stdio.h>
 #include <math.h>
 struct Point{

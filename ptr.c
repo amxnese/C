@@ -4,7 +4,8 @@ int main(void){
     int n;
     printf("enter the number of integers:  ");
     scanf("%d",&n);
-    int *ptr = (int*)malloc(n*(sizeof(int)));
+    int* ptr;
+    ptr = (int*)malloc(n*(sizeof(int)));
     if(ptr == NULL){
         printf("memory not available");
         exit(1);
