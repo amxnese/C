@@ -371,30 +371,29 @@ int main(void)
 //    student1.gpa = 3.4;
 //    strcpy(student1.name,"amine");
 //    printf("%f",student1.gpa);
-//    int x = 1;
-//    do{
-//        printf("I count %d\n",x);
-//        x++;
-//    }
-//    while (x < 11);
-//    int secret_num = 5;
-//    int number_given;
-//    int guess_count = 5;
-//    printf("guess a number from 1 to 10:   ");
-//    scanf("%d",&number_given);
-//    while (number_given != secret_num){
-//        printf("wrong number,you have %d tries left try again:   ",guess_count);
-//        scanf("%d",&number_given);
-//        guess_count--;
-//        if (guess_count == 1){
-//            printf("you're out of guesses..");
-//            break;
-//        }
-//        if (number_given == secret_num){
-//            printf("correct!");
-//        }
-//    }
-//    return 0;
+
+        /*
+        int secret_num = 5;
+        int number_given;
+        int guess_count = 3;
+        printf("guess a number from 1 to 15:   ");
+        do{
+            scanf("%d",&number_given);
+            }while(number_given < 0 || number_given > 15);
+        while (number_given != secret_num){
+            printf("Wrong Guess,You Have %d Tries Left:  ",guess_count--);
+            scanf("%d",&number_given);
+            if (guess_count == 0){
+                printf("You're Out Of Guesses..");
+                break;
+            }
+            if (number_given == secret_num){
+                printf("Correct!!!");
+                break;
+            }
+        }
+        */
+        
 //    int nums[2][4] = {{1,2,3,4},
 //                      {5,6,7,8},
 //                      };
