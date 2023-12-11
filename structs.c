@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <string.h>
 int main(void){
-    struct Player{
+    typedef Player{
         char name[12];
         int score;
-    };
+    }Player;
     int num_of_players;
     printf("how many players are there:  ");
     scanf("%d",&num_of_players);
-    struct Player players[num_of_players];
+    Player players[num_of_players];
     for(int i=0;i<num_of_players;i++){
         printf("enter player%d name:  ",i+1);
         scanf("%s",players[i].name);
